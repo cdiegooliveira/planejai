@@ -50,16 +50,12 @@ export function SimulationResultsPage() {
 				</button>
 			</div>
 
-			{/* 2. A REFERÊNCIA: Tudo dentro desta div será capturado pelo PDF */}
 			<div ref={contentRef}>
 				<PageHero
 					title="Resultado da sua simulação"
 					subtitle="Com base no seu perfil financeiro e objetivos."
 				/>
 
-				{/* --- PÁGINA 1 DO PDF --- */}
-
-				{/* LINHA 1 DE CARDS (Custo, Prazo, Economia) */}
 				<div className="mb-4 grid grid-cols-1 gap-4 lg:grid-cols-3 print:grid-cols-3">
 					<Card
 						icon={Goal}
@@ -82,10 +78,7 @@ export function SimulationResultsPage() {
 					/>
 				</div>
 
-				{/* GRID INFERIOR (Transformado para reordenar na impressão) */}
 				<div className="grid gap-6 lg:grid-cols-3 print:flex print:flex-col print:gap-4">
-					{/* LINHA 2 DE CARDS (Renda, Custos, Dívidas) */}
-					{/* Na tela: Fica na direita (order-2). No PDF: Sobe (print:order-1) e fica em 3 colunas (print:grid-cols-3) */}
 					<div className="order-1 flex flex-col gap-4 lg:order-2 print:order-1 print:grid print:grid-cols-3">
 						<Card
 							icon={Wallet}
@@ -107,10 +100,7 @@ export function SimulationResultsPage() {
 						/>
 					</div>
 
-					{/* --- PÁGINA 2 DO PDF --- */}
-
 					{/* CARD DA IA (Insight) */}
-					{/* Na tela: Ocupa 2 colunas. No PDF: Desce (print:order-2) e FORÇA a quebra de página (print:break-before-page) */}
 					<div className="lg:col-span-2 print:order-2 print:break-before-page print:pt-8">
 						<AIInsightsCard simulationId={data.id} />
 					</div>
