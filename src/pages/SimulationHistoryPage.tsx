@@ -14,7 +14,7 @@ interface SimulationData {
 	income: string | number;
 	expenses: string | number;
 	debts: string | number;
-	[key: string]: any; // <-- Essa linha é o "coringa" que diz ao TypeScript para não reclamar de propriedades extras
+	[key: string]: any;
 }
 
 export function SimulationHistoryPage() {
